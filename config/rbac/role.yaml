@@ -27,13 +27,6 @@ rules:
   - events
   verbs:
   - create
-# Custom
-- apiGroups:
-  - ""
-  resources:
-  - serviceaccounts
-  verbs:
-  - "*"
 
 ##
 ## Rules for charts.templarfelix.com/v1alpha1, Kind: RolloutDeployment
@@ -88,3 +81,27 @@ rules:
   - watch
 
 #+kubebuilder:scaffold:rules
+
+# Custom
+- apiGroups:
+  - "argoproj.io"
+  resources:
+  - analysistemplates
+  - rollouts
+  verbs:
+  - "*" 
+- apiGroups:
+  - "networking.istio.io/v1alpha3"
+  resources:
+  - virtualservices
+  - gateways
+  - destinationrule
+  verbs:
+  - "*" 
+- apiGroups:
+  - ""
+  resources:
+  - serviceaccounts
+  - services
+  verbs:
+  - "*" 
