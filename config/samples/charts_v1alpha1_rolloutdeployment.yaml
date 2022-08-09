@@ -1,7 +1,7 @@
 apiVersion: charts.templarfelix.com/v1alpha1
-kind: Rollout
+kind: RolloutDeployment
 metadata:
-  name: rollout-sample
+  name: rolloutdeployment-sample
 spec:
   # Default values copied from <project_dir>/helm-charts/rollout/values.yaml
   domain: templarfelix.com

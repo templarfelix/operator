@@ -29,14 +29,14 @@ rules:
   - create
 
 ##
-## Rules for charts.templarfelix.com/v1alpha1, Kind: Rollout
+## Rules for charts.templarfelix.com/v1alpha1, Kind: RolloutDeployment
 ##
 - apiGroups:
   - charts.templarfelix.com
   resources:
-  - rollouts
-  - rollouts/status
-  - rollouts/finalizers
+  - rolloutdeployments
+  - rolloutdeployments/status
+  - rolloutdeployments/finalizers
   verbs:
   - create
   - delete

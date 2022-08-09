@@ -1,20 +1,24 @@
-# permissions for end users to view rollouts.
+# permissions for end users to edit rolloutdeployments.
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: rollout-viewer-role
+  name: rolloutdeployment-editor-role
 rules:
 - apiGroups:
   - charts.templarfelix.com
   resources:
-  - rollouts
+  - rolloutdeployments
   verbs:
+  - create
+  - delete
   - get
   - list
+  - patch
+  - update
   - watch
 - apiGroups:
   - charts.templarfelix.com
   resources:
-  - rollouts/status
+  - rolloutdeployments/status
   verbs:
   - get
