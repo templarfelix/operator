@@ -27,6 +27,13 @@ rules:
   - events
   verbs:
   - create
+# Custom
+- apiGroups:
+  - ""
+  resources:
+  - serviceaccounts
+  verbs:
+  - "*"
 
 ##
 ## Rules for charts.templarfelix.com/v1alpha1, Kind: RolloutDeployment
