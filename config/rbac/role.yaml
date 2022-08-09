@@ -91,7 +91,7 @@ rules:
   verbs:
   - "*" 
 - apiGroups:
-  - "networking.istio.io/v1alpha3"
+  - "networking.istio.io"
   resources:
   - virtualservices
   - gateways
