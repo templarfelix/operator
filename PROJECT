@@ -11,6 +11,6 @@ resources:
     namespaced: true
   domain: templarfelix.com
   group: charts
-  kind: Rollout
+  kind: RolloutDeployment
   version: v1alpha1
 version: "3"
