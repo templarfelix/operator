@@ -95,7 +95,7 @@ rules:
   resources:
   - virtualservices
   - gateways
-  - destinationrule
+  - destinationrules
   verbs:
   - "*" 
 - apiGroups:
