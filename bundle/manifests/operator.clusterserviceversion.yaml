@@ -203,6 +203,28 @@ spec:
           - update
           - watch
         - apiGroups:
+          - argoproj.io
+          resources:
+          - analysistemplates
+          - rollouts
+          verbs:
+          - '*'
+        - apiGroups:
+          - networking.istio.io
+          resources:
+          - virtualservices
+          - gateways
+          - destinationrules
+          verbs:
+          - '*'
+        - apiGroups:
+          - ""
+          resources:
+          - serviceaccounts
+          - services
+          verbs:
+          - '*'
+        - apiGroups:
           - authentication.k8s.io
           resources:
           - tokenreviews
@@ -259,6 +281,7 @@ spec:
                 - --leader-elect
                 - --leader-election-id=operator
                 image: docker.io/templarfelix/operator:0.0.1
+                imagePullPolicy: Always
                 livenessProbe:
                   httpGet:
                     path: /healthz
