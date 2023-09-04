@@ -4,3 +4,9 @@ $ make bundle
 
 ## update ??
 make docker-build docker-push
+
+## need fix kustomization add manager correct image
+images:
+- name: controller
+  newName: docker.io/templarfelix/operator
+  newTag: 0.0.1
