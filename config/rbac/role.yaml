@@ -45,63 +45,33 @@ rules:
   - patch
   - update
   - watch
-- apiGroups:
+- verbs:
+  - "*"
+  apiGroups:
   - ""
   resources:
-  - pods
-  - services
-  - services/finalizers
-  - endpoints
-  - persistentvolumeclaims
-  - events
-  - configmaps
-  - secrets
-  verbs:
-  - create
-  - delete
-  - get
-  - list
-  - patch
-  - update
-  - watch
-- apiGroups:
-  - apps
-  resources:
-  - deployments
-  - daemonsets
-  - replicasets
-  - statefulsets
-  verbs:
-  - create
-  - delete
-  - get
-  - list
-  - patch
-  - update
-  - watch
-
-#+kubebuilder:scaffold:rules
-
-# Custom
-- apiGroups:
+  - "serviceaccounts"
+  - "services"
+- verbs:
+  - "*"
+  apiGroups:
   - "argoproj.io"
   resources:
-  - analysistemplates
-  - rollouts
-  verbs:
-  - "*" 
-- apiGroups:
+  - "analysistemplates"
+  - "rollouts"
+- verbs:
+  - "*"
+  apiGroups:
+  - "cert-manager.io"
+  resources:
+  - "certificates"
+- verbs:
+  - "*"
+  apiGroups:
   - "networking.istio.io"
   resources:
-  - virtualservices
-  - gateways
-  - destinationrules
-  verbs:
-  - "*" 
-- apiGroups:
-  - ""
-  resources:
-  - serviceaccounts
-  - services
-  verbs:
-  - "*" 
+  - "destinationrules"
+  - "gateways"
+  - "virtualservices"
+
+#+kubebuilder:scaffold:rules
