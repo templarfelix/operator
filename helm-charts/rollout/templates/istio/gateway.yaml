@@ -29,5 +29,8 @@ spec:
       protocol: HTTPS
     tls:
       mode: SIMPLE
-      privateKey: /etc/istio/ingressgateway-certs/tls.key
-      serverCertificate: /etc/istio/ingressgateway-certs/tls.crt
+      credentialName: {{ include "rollout-Canary.fullname" . }}-cert-staging
+    #tls:
+    #  mode: SIMPLE
+    #  privateKey: /etc/istio/ingressgateway-certs/tls.key
+    #  serverCertificate: /etc/istio/ingressgateway-certs/tls.crt
